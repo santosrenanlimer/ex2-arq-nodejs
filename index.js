@@ -21,11 +21,11 @@ app.get('', (req, res) => {
   res.send('Exercício 2')
 })
 
-app.get('/products', (req, res, next) => {
+app.get('/produtos', (req, res, next) => {
   res.status(200).json(lista_produtos.produtos)
 })
 
-app.get('/products/:id', (req, res, next) => {
+app.get('/produtos/:id', (req, res, next) => {
   const id = parseInt(req.params.id);
   const productFind = lista_produtos.produtos.find(item => item.id === id)
   if (productFind) {
@@ -36,7 +36,7 @@ app.get('/products/:id', (req, res, next) => {
   }
 })
 
-app.post('/products', (req, res, next) => {
+app.post('/produtos', (req, res, next) => {
   const product = req.body
 
   if (product && product.descricao && product.valor && product.marca) {
@@ -49,7 +49,7 @@ app.post('/products', (req, res, next) => {
   }
 })
 
-app.put('/products/:id', (req, res, next) => {
+app.put('/produtos/:id', (req, res, next) => {
   const id = parseInt(req.params.id);
   const product = req.body
   let idProductIndex = lista_produtos.produtos.findIndex(item => item.id === id)
@@ -67,7 +67,7 @@ app.put('/products/:id', (req, res, next) => {
 
 
 
-app.delete('/products/:id', (req, res, next) => {
+app.delete('/produtos/:id', (req, res, next) => {
   const id = parseInt(req.params.id);
   let idProductIndex = lista_produtos.produtos.findIndex(item => item.id === id)
   if (idProductIndex != -1) {
