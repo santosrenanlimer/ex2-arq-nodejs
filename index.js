@@ -72,7 +72,6 @@ app.delete('/products/:id', (req, res, next) => {
   let idProductIndex = lista_produtos.produtos.findIndex(item => item.id === id)
   if (idProductIndex != -1) {
     lista_produtos.produtos.splice(idProductIndex, 1)
-    console.log(lista_produtos.produtos)
     res.status(200).json({ message: "Produto excluído com sucesso" })
   }
   else {
