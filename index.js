@@ -16,6 +16,11 @@ const lista_produtos = {
   ]
 }
 
+
+app.get('', (req, res) => {
+  res.send('Exercício 2')
+})
+
 app.get('/products', (req, res, next) => {
   res.status(200).json(lista_produtos.produtos)
 })
